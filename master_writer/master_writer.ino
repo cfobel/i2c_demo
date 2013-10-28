@@ -12,6 +12,7 @@
 #include "config.h"
 
 void setup() {
+    pinMode(13, OUTPUT);
     // join i2c bus (address optional for master)
     Wire.begin(MASTER_ADDRESS);
     TWBR = 12;
@@ -20,6 +21,9 @@ void setup() {
 byte x = 0;
 
 void loop() {
+    digitalWrite(13, HIGH);
+    delay(50);
+    digitalWrite(13, LOW);
     // transmit to slave device
     Wire.beginTransmission(SLAVE_ADDRESS);
     // sends five bytes
@@ -29,5 +33,5 @@ void loop() {
     // stop transmitting
     Wire.endTransmission();
     x++;
-    delay(500);
+    delay(50);
 }

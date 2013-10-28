@@ -22,7 +22,7 @@ void setup() {
 }
 
 void loop() {
-    delay(100);
+    delay(10);
 }
 
 // function that executes whenever data is received from master
